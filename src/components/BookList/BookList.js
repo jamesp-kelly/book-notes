@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Book from '../Book/Book';
+import { getVisibleBooks } from '../../util/';
 
-const BookList = ({books, onSelectBook}) => (
+const BookList = ({ books }) => (
   <ul>
     {
-      books.map((book, i) => 
+      books.map((book) => 
         <Book 
           key={book.id}
-          title={book.title} 
           id={book.id}
-          onSelectBook={onSelectBook}
+          title={book.title}
         />
       )
     }
@@ -21,4 +22,14 @@ BookList.propTypes = {
   books: PropTypes.array.isRequired
 };
 
-export default BookList;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    books: getVisibleBooks(state.books)
+  }
+}
+
+const VisibleBookList = connect(
+  mapStateToProps
+)(BookList);
+
+export default VisibleBookList;

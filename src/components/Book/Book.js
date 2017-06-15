@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Book = ({id, title, onSelectBook}) => (
-  <div onClick={() => onSelectBook(id)}>{title}</div>
+const Book = ({ title, id }) => (
+  <div>
+    <Link to={`/books/${id}`}>
+      <div>{title}</div>
+    </Link>
+  </div>
 );
 
 Book.propTypes = {
-  title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  onSelectBook: PropTypes.func.isRequired
+  title: PropTypes.string.isRequired
 };
 
 export default Book;
