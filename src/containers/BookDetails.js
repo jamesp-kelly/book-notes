@@ -1,14 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import VisibleNoteList from '../components/NoteList/NoteList';
+import BookDetailsLayout from '../components/BookDetailsLayout/BookDetailsLayout';
 
-export const BookDetails = ({ book, notes }) => (
-  <div>
-    <div>{book.title}</div>
-    <div>{book.id}</div>
-    <VisibleNoteList selectedBookId={book.id} />
-  </div>
-);
+export const BookDetails = ({ book }) => {
+  
+  const upLinkObj = {
+    url: '',
+    text: 'All Books'
+  };
+
+  return (
+    <BookDetailsLayout book={book} upLink={upLinkObj} />
+  );
+};
+ 
 
 const mapStateToProps = (state, ownProps) => {
   const bookId = ownProps.match.params.bookId;

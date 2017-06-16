@@ -2,16 +2,17 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import BookNotesApp from '../containers/BookNotesApp';
-import BookDetails from '../containers/BookDetails'
+import BookDetails from '../containers/BookDetails';
+import NoteDetails from '../containers/NoteDetails';
 
-const Root = ({ store }) => {
+const Root = ({ store }) => { 
   return (
     <Provider store={store}>
       <Router>
         <div> 
           <Route exact path="/" component={BookNotesApp} />
-          <Route path="/:bookId" component={BookDetails} />
-          {/*<Route path="/note/:noteId" component={NoteDetails} />*/}
+          <Route exact path="/note/:noteId" component={NoteDetails} />
+          <Route exact path="/:bookId" component={BookDetails} />
         </div>
       </Router>
     </Provider>
