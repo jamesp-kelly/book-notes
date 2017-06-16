@@ -20,6 +20,6 @@ describe('Book', () => {
         id={singleBook.id}
       />
     );
-    expect(wrapper.find('.boot-title').text()).toEqual(singleBook.title);
+    expect(wrapper.find('.book-title').text()).toEqual(singleBook.title);
   });
 });

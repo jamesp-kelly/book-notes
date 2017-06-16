@@ -1,4 +1,4 @@
-import {ADD_BOOK, UPDATE_BOOK_TITLE, CLEAR_BOOKS } from '../actions/'
+import {ADD_BOOK, UPDATE_BOOK_TITLE, CLEAR_BOOKS } from '../actions/books'
 
 const book = (state, action) => {
   switch(action.type) {

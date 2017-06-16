@@ -11,6 +11,7 @@ const Root = ({ store }) => {
         <div> 
           <Route exact path="/" component={BookNotesApp} />
           <Route path="/:bookId" component={BookDetails} />
+          {/*<Route path="/note/:noteId" component={NoteDetails} />*/}
         </div>
       </Router>
     </Provider>

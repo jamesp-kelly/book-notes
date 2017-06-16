@@ -1,4 +1,4 @@
-import {ADD_NOTE, UPDATE_NOTE_TITLE, UPDATE_NOTE_DESCRIPTION, DELETE_NOTE } from '../actions/'
+import {ADD_NOTE, UPDATE_NOTE_TITLE, UPDATE_NOTE_DESCRIPTION, DELETE_NOTE } from '../actions/notes'
 
 const note = (state, action) => {
   switch(action.type) {

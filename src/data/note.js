@@ -3,6 +3,6 @@ export const singleNote = {
 };
 
 export const twoNotes = [
-  { id: 'abc', title: 'Beorn', description: 'Bear', bookId: 'abc' },
-  { id: 'xyz', title: 'shardplate', description: 'Armour', bookId: 'xyz' }
+  { id: '123', title: 'Beorn', description: 'Bear', bookId: 'abc' },
+  { id: '456', title: 'shardplate', description: 'Armour', bookId: 'xyz' }
 ];
