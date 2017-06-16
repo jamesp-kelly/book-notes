@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Book = ({ title, id }) => (
   <div>
-    <Link to={`/books/${id}`}>
+    <Link to={`/${id}`}>
       <div className="boot-title">{title}</div>
     </Link>
   </div>

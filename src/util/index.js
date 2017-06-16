@@ -1,3 +1,3 @@
-export const getVisibleBooks = (books) => {
+export const filterVisibleBooks = (books) => {
   return books;
 }

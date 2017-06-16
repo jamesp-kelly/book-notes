@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../Book/Book';
-import { getVisibleBooks } from '../../util/';
+import { filterVisibleBooks } from '../../util/';
 
 export const BookList = ({ books }) => (
   <ul>
@@ -24,7 +24,7 @@ BookList.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    books: getVisibleBooks(state.books)
+    books: filterVisibleBooks(state.books)
   }
 }
 
