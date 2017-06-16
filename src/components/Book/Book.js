@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Book = ({ title, id }) => (
   <div>
     <Link to={`/books/${id}`}>
-      <div>{title}</div>
+      <div className="boot-title">{title}</div>
     </Link>
   </div>
 );

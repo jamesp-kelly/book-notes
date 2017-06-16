@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import BookList from './BookList';
+import { BookList } from './BookList'; //non-reduxy
 import { twoBooks } from '../../data/book';
 
 

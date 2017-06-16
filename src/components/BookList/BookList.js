@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Book from '../Book/Book';
 import { getVisibleBooks } from '../../util/';
 
-const BookList = ({ books }) => (
+export const BookList = ({ books }) => (
   <ul>
     {
       books.map((book) => 

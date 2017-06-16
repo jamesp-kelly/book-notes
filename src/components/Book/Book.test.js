@@ -9,7 +9,6 @@ describe('Book', () => {
       <Book 
         title={singleBook.title} 
         id={singleBook.id}
-        onSelectBook={() => {}} 
       />
     );
   });
@@ -18,26 +17,9 @@ describe('Book', () => {
     const wrapper = shallow(
       <Book 
         title={singleBook.title} 
-        id={singleBook.id} 
-        onSelectBook={() => {}}
+        id={singleBook.id}
       />
     );
-    expect(wrapper.text()).toEqual(singleBook.title);
-  });
-
-  it('invokes callback correctly when clicked', () => {
-    let bookId;
-    const handleBookClick = (id) => bookId = id;
-
-    const wrapper = shallow(
-      <Book 
-        title={singleBook.title} 
-        id={singleBook.id} 
-        onSelectBook={handleBookClick}
-      />
-    );
-
-    wrapper.find('div').simulate('click');
-    expect(bookId).toEqual(singleBook.id);
+    expect(wrapper.find('.boot-title').text()).toEqual(singleBook.title);
   });
 });
