@@ -5,11 +5,14 @@ export const UPDATE_NOTE_TITLE = 'UPDATE_NOTE_TITLE';
 export const UPDATE_NOTE_DESCRIPTION = 'UPDATE_NOTE_DESCRIPTION';
 export const DELETE_NOTE = 'DELETE_NOTE'
 
-export const addNote = (title, description) => ({
+export const DISPLAY_NOTE_FORM = 'DISPLAY_NOTE_FORM';
+
+export const addNote = (title, description, bookId) => ({
   type: ADD_NOTE,
   id: v4(),
   title,
-  description
+  description,
+  bookId
 });
 
 export const updateNoteTitle = (id, updatedTitle) => ({
@@ -27,4 +30,9 @@ export const updateNoteDescription = (id, updatedDescription) => ({
 export const deleteNote = (id) => ({
   type: DELETE_NOTE,
   id
+});
+
+export const displayNoteForm = (display) => ({
+  type: DISPLAY_NOTE_FORM,
+  display
 });

@@ -1,16 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, dispatch } from 'react-redux';
 import BookDetailsLayout from '../components/BookDetailsLayout/BookDetailsLayout';
+import { displayNoteForm } from '../actions/notes';
 
-export const BookDetails = ({ book }) => {
+export const BookDetails = ({ dispatch, book, displayForm }) => {
   
   const upLinkObj = {
     url: '',
     text: 'All Books'
   };
 
+  const handleNewNoteClicked = (e) => {
+    dispatch(displayNoteForm(true));
+  }
+
   return (
-    <BookDetailsLayout book={book} upLink={upLinkObj} />
+    <BookDetailsLayout 
+      book={book}  
+      upLink={upLinkObj} 
+      onNewNoteClick={handleNewNoteClicked}
+      displayForm={displayForm} />
   );
 };
  
@@ -18,7 +27,8 @@ export const BookDetails = ({ book }) => {
 const mapStateToProps = (state, ownProps) => {
   const bookId = ownProps.match.params.bookId;
   return {
-    book: state.books.find(b => b.id === bookId)
+    book: state.books.find(b => b.id === bookId),
+    displayForm: state.ui.displayNoteForm
   }
 }
 

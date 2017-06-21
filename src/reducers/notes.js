@@ -6,7 +6,8 @@ const note = (state, action) => {
       return {
         id: action.id,
         title: action.title,
-        description: action.title
+        description: action.description,
+        bookId: action.bookId
       };
     case UPDATE_NOTE_TITLE:
       if (state.id !== action.id) {
