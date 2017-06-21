@@ -4,6 +4,8 @@ export const ADD_BOOK = 'ADD_BOOK';
 export const UPDATE_BOOK_TITLE = 'UPDATE_BOOK_TITLE';
 export const CLEAR_BOOKS = 'CLEAR_BOOKS';
 
+export const CLICK_NEW_BOOK = 'CLICK_NEW_BOOK'
+
 
 export const addBook = (title) => ({
   type: ADD_BOOK,
@@ -20,4 +22,8 @@ export const updateBookTitle = (id, updatedTitle) => ({
 export const clearBooks = () => ({
   type: CLEAR_BOOKS
 });
+
+export const clickNewBook = () => ({
+  type: CLICK_NEW_BOOK
+})
 

@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 import rootReducer from '../reducers/root';
 import { twoBooks } from '../data/book';
 import { twoNotes } from '../data/note';
@@ -10,7 +11,12 @@ const configureStore = () => {
     notes: twoNotes
   };
 
-  const store = createStore(rootReducer, testData);
+  const store = createStore(
+    rootReducer, 
+    testData,
+    applyMiddleware(logger)
+  );
+
   return store;
 }
 
